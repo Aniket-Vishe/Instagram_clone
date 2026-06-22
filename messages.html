@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Messages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="ig-body">
+  <nav class="ig-sidebar d-none d-lg-flex flex-column">
+    <div class="ig-sidebar-inner">
+      <a href="index.html" class="ig-logo-wrap mb-2">
+        <span class="fw-bold fs-4">Instagram</span>
+      </a>
+      <ul class="ig-nav list-unstyled mt-1">
+        <li><a href="index.html" class="ig-nav-link"><i class="bi bi-house"></i><span class="ig-nav-label">Home</span></a></li>
+        <li><a href="explore.html" class="ig-nav-link"><i class="bi bi-search"></i><span class="ig-nav-label">Explore</span></a></li>
+        <li><a href="messages.html" class="ig-nav-link active"><i class="bi bi-chat-dots-fill"></i><span class="ig-nav-label">Messages</span></a></li>
+        <li><a href="reels.html" class="ig-nav-link"><i class="bi bi-camera-reels"></i><span class="ig-nav-label">Reels</span></a></li>
+        <li><a href="notifications.html" class="ig-nav-link"><i class="bi bi-heart"></i><span class="ig-nav-label">Likes</span></a></li>
+        <li><a href="profile.html" class="ig-nav-link"><img src="profile-picture.jpeg" class="ig-nav-avatar" alt="" /><span class="ig-nav-label">Profile</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="ig-main ig-dm-main">
+    <div class="ig-dm-layout">
+      <aside class="ig-dm-sidebar" id="dmSidebar">
+        <div class="ig-dm-sidebar-header px-4 py-4">
+          <h5 class="fw-bold mb-0">Messages</h5>
+          <p class="text-muted small mb-0">Simple chat screen</p>
+        </div>
+
+        <div class="ig-dm-list">
+          <div class="ig-dm-item active">
+            <div class="ig-dm-item-inner">
+              <img src="chinu.jpg" class="ig-dm-avatar" alt="" />
+              <div class="ig-dm-info">
+                <div class="ig-dm-name">Chinu</div>
+                <div class="ig-dm-preview">Hey, nice post! - 2m</div>
+              </div>
+            </div>
+          </div>
+          <div class="ig-dm-item">
+            <div class="ig-dm-item-inner">
+              <img src="https://i.pravatar.cc/56?img=9" class="ig-dm-avatar" alt="" />
+              <div class="ig-dm-info">
+                <div class="ig-dm-name">Priya</div>
+                <div class="ig-dm-preview">Thanks! - 1h</div>
+              </div>
+            </div>
+          </div>
+          <div class="ig-dm-item">
+            <div class="ig-dm-item-inner">
+              <img src="https://i.pravatar.cc/56?img=15" class="ig-dm-avatar" alt="" />
+              <div class="ig-dm-info">
+                <div class="ig-dm-name">Jay</div>
+                <div class="ig-dm-preview">See you tomorrow - 3h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="ig-dm-chat" id="dmChat">
+        <div class="ig-dm-chat-header">
+          <img src="chinu.jpg" class="rounded-circle me-3" style="width:44px;height:44px;object-fit:cover;" alt="" />
+          <div>
+            <div class="fw-semibold" style="font-size:.95rem;">Chinu</div>
+            <div class="text-muted" style="font-size:.78rem;">Online</div>
+          </div>
+        </div>
+
+        <div class="ig-dm-messages" id="dmMessages">
+          <div class="ig-dm-date-divider">Today</div>
+          <div class="ig-dm-msg ig-dm-recv">
+            <img src="chinu.jpg" class="ig-dm-msg-avatar" alt="" />
+            <div class="ig-dm-bubble ig-dm-bubble-recv">Hey, nice post!</div>
+          </div>
+          <div class="ig-dm-msg ig-dm-sent">
+            <div class="ig-dm-bubble ig-dm-bubble-sent">Thank you!</div>
+          </div>
+          <div class="ig-dm-msg ig-dm-recv">
+            <img src="chinu.jpg" class="ig-dm-msg-avatar" alt="" />
+            <div class="ig-dm-bubble ig-dm-bubble-recv">Did you take that photo?</div>
+          </div>
+        </div>
+
+        <div class="ig-dm-input-bar">
+          <div class="ig-dm-input-wrap">
+            <input type="text" class="ig-dm-input" id="dmInput" placeholder="Type a message..." autocomplete="off" />
+          </div>
+          <button class="ig-dm-send-btn" onclick="sendSimpleMessage()">
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="ig-mobile-nav d-flex d-lg-none">
+    <a href="index.html" class="ig-mob-link"><i class="bi bi-house-fill"></i></a>
+    <a href="explore.html" class="ig-mob-link"><i class="bi bi-search"></i></a>
+    <a href="messages.html" class="ig-mob-link active"><i class="bi bi-chat-dots"></i></a>
+    <a href="reels.html" class="ig-mob-link"><i class="bi bi-camera-reels"></i></a>
+    <a href="profile.html" class="ig-mob-link"><img src="profile-picture.jpeg" class="ig-mob-avatar" alt="" /></a>
+  </nav>
+
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:9999;">
+    <div id="igToast" class="ig-toast" style="display:none;"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

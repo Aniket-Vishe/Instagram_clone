@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Likes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="ig-body">
+  <nav class="ig-sidebar d-none d-lg-flex flex-column">
+    <div class="ig-sidebar-inner">
+      <a href="index.html" class="ig-logo-wrap mb-2"><span class="fw-bold fs-4">Instagram</span></a>
+      <ul class="ig-nav list-unstyled mt-1">
+        <li><a href="index.html" class="ig-nav-link"><i class="bi bi-house"></i><span class="ig-nav-label">Home</span></a></li>
+        <li><a href="explore.html" class="ig-nav-link"><i class="bi bi-search"></i><span class="ig-nav-label">Explore</span></a></li>
+        <li><a href="messages.html" class="ig-nav-link"><i class="bi bi-chat-dots"></i><span class="ig-nav-label">Messages</span></a></li>
+        <li><a href="reels.html" class="ig-nav-link"><i class="bi bi-camera-reels"></i><span class="ig-nav-label">Reels</span></a></li>
+        <li><a href="notifications.html" class="ig-nav-link active"><i class="bi bi-heart-fill"></i><span class="ig-nav-label">Likes</span></a></li>
+        <li><a href="profile.html" class="ig-nav-link"><img src="profile-picture.jpeg" class="ig-nav-avatar" alt="" /><span class="ig-nav-label">Profile</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="ig-main">
+    <div class="ig-notif-wrap">
+      <h2 class="ig-notif-title">Activity</h2>
+
+      <div class="ig-notif-section-label">Today</div>
+      <div class="ig-notif-item ig-notif-unread">
+        <img src="chinu.jpg" class="ig-notif-avatar" alt="" />
+        <div class="ig-notif-text"><span class="ig-notif-user">Chinu</span> liked your photo. <span class="ig-notif-time">2m</span></div>
+        <img src="water-side.jpeg" class="ig-notif-thumb" alt="" />
+      </div>
+      <div class="ig-notif-item">
+        <img src="https://i.pravatar.cc/44?img=9" class="ig-notif-avatar" alt="" />
+        <div class="ig-notif-text"><span class="ig-notif-user">Priya</span> commented: "Nice picture!" <span class="ig-notif-time">15m</span></div>
+        <img src="tree.jpeg" class="ig-notif-thumb" alt="" />
+      </div>
+      <div class="ig-notif-item">
+        <img src="https://i.pravatar.cc/44?img=3" class="ig-notif-avatar" alt="" />
+        <div class="ig-notif-text"><span class="ig-notif-user">Ankit</span> started following you. <span class="ig-notif-time">1h</span></div>
+        <button class="btn ig-btn-follow-sm" onclick="igFollow(this)">Follow</button>
+      </div>
+
+      <div class="ig-notif-section-label">This week</div>
+      <div class="ig-notif-item">
+        <img src="https://i.pravatar.cc/44?img=15" class="ig-notif-avatar" alt="" />
+        <div class="ig-notif-text"><span class="ig-notif-user">Jay</span> liked your profile photo. <span class="ig-notif-time">2d</span></div>
+      </div>
+      <div class="ig-notif-item">
+        <img src="https://i.pravatar.cc/44?img=7" class="ig-notif-avatar" alt="" />
+        <div class="ig-notif-text"><span class="ig-notif-user">Meera</span> started following you. <span class="ig-notif-time">4d</span></div>
+        <button class="btn ig-btn-follow-sm" onclick="igFollow(this)">Follow</button>
+      </div>
+    </div>
+  </main>
+
+  <nav class="ig-mobile-nav d-flex d-lg-none">
+    <a href="index.html" class="ig-mob-link"><i class="bi bi-house-fill"></i></a>
+    <a href="explore.html" class="ig-mob-link"><i class="bi bi-search"></i></a>
+    <a href="messages.html" class="ig-mob-link"><i class="bi bi-chat-dots"></i></a>
+    <a href="reels.html" class="ig-mob-link"><i class="bi bi-camera-reels"></i></a>
+    <a href="profile.html" class="ig-mob-link"><img src="C:\Users\anike\OneDrive\Pictures\Camera Roll\WhatsApp Image 2026-06-14 at 4.27.42 PM.jpeg" class="ig-mob-avatar" alt="" /></a>
+  </nav>
+
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:9999;">
+    <div id="igToast" class="ig-toast" style="display:none;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="ig-auth-body">
+  <div class="ig-auth-outer ig-auth-single">
+    <div class="ig-auth-right">
+      <div class="ig-auth-card">
+        <div class="ig-auth-logo">Instagram</div>
+        <p class="text-center fw-semibold mb-4" style="color:#8e8e8e;font-size:.9rem;">Create a simple social media account.</p>
+
+        <form id="registerForm" novalidate>
+          <div class="mb-2">
+            <input type="text" class="ig-auth-input form-control" id="regFullName" placeholder="Full name" required />
+          </div>
+          <div class="mb-2">
+            <input type="text" class="ig-auth-input form-control" id="regUsername" placeholder="Username" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" class="ig-auth-input form-control" id="regPassword" placeholder="Password" required />
+          </div>
+
+          <button type="submit" class="btn ig-btn-primary w-100" id="signupBtn">Create account</button>
+          <div class="ig-auth-error mt-3" id="registerError" style="display:none;">
+            <small>Please fill all fields.</small>
+          </div>
+        </form>
+      </div>
+
+      <div class="ig-auth-card ig-auth-card-sm text-center">
+        Already have an account? <a href="login.html" class="ig-auth-signup-link">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="ig-auth-footer">
+    <div class="ig-auth-footer-links">
+      <a href="#">About</a><a href="#">Help</a><a href="#">Privacy</a><a href="#">Terms</a>
+    </div>
+    <div class="mt-2" style="font-size:.75rem;color:#8e8e8e;">2026 Instagram Aniket</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('regFullName').value.trim();
+      const username = document.getElementById('regUsername').value.trim();
+      const password = document.getElementById('regPassword').value.trim();
+      const error = document.getElementById('registerError');
+
+      if (!name || !username || !password) {
+        error.style.display = 'block';
+        return;
+      }
+
+      error.style.display = 'none';
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

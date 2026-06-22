@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body class="ig-auth-body">
+<div class="ig-auth-outer">
+
+  <!-- Left: phone mockup (hidden on mobile) -->
+  <div class="ig-auth-mockup d-none d-lg-flex">
+    <div class="ig-mockup-phone">
+      <div class="ig-mockup-screen">
+        <div class="ig-mockup-post">
+          <div class="ig-mockup-header">
+            <img src="chinu.jpg" class="rounded-circle" style="width:24px;height:24px;" alt=""/>
+            <span style="font-size:.72rem;font-weight:600;margin-left:6px;">chinu_photography</span>
+          </div>
+          <img src="https://picsum.photos/seed/mockp1/260/280" style="width:100%;display:block;" alt=""/>
+          <div style="padding:8px 10px;">
+            <i class="bi bi-heart" style="font-size:.9rem;"></i>&nbsp;<i class="bi bi-chat" style="font-size:.9rem;"></i>
+            <div style="font-size:.7rem;font-weight:600;margin-top:4px;">342 likes</div>
+            <div style="font-size:.7rem;margin-top:2px;">Golden hour 🌅</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Login form -->
+  <div class="ig-auth-right">
+    <div class="ig-auth-card">
+      <!-- Logo -->
+      <div class="ig-auth-logo">Instagram</div>
+
+      <form id="loginForm" novalidate>
+        <div class="mb-2">
+          <input type="text" class="ig-auth-input form-control" id="loginUsername" placeholder="Username or email" required/>
+        </div>
+        <div class="mb-3 position-relative">
+          <input type="password" class="ig-auth-input form-control" id="loginPassword" placeholder="Password" required/>
+          <button type="button" class="ig-auth-eye-btn" onclick="togglePass('loginPassword',this)">
+            <span id="showHideLabel">Show</span>
+          </button>
+        </div>
+        <button type="submit" class="btn ig-btn-primary w-100 mb-3" id="loginBtn">Log in</button>
+        <div class="ig-auth-divider"><span>OR</span></div>
+        <div class="text-center mt-2">
+          <a href="#" class="ig-auth-forgot">Forgot password?</a>
+        </div>
+        <div class="ig-auth-error mt-3" id="loginError" style="display:none;">
+          <small>Incorrect username or password.</small>
+        </div>
+      </form>
+    </div>
+
+    <div class="ig-auth-card ig-auth-card-sm text-center">
+      <span>New user? </span><a href="register.html" class="ig-auth-signup-link">Create account</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="ig-auth-footer">
+  <div class="ig-auth-footer-links">
+    <a href="#">About</a><a href="#">Help</a><a href="#">Privacy</a><a href="#">Terms</a>
+  </div>
+  <div class="mt-2" style="font-size:.75rem;color:#8e8e8e;">2026 Instagram Aniket</div>
+</footer>
+
+<div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:9999;">
+  <div id="igToast" class="ig-toast" style="display:none;"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const u = document.getElementById('loginUsername').value.trim();
+    const p = document.getElementById('loginPassword').value.trim();
+    const err = document.getElementById('loginError');
+    const btn = document.getElementById('loginBtn');
+    err.style.display = 'none';
+    if (u !== 'aniket' || p !== '12345') { err.style.display = 'block'; return; }
+    btn.textContent = 'Logging in...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Log in';
+      btn.disabled = false;
+      window.location.href = 'index.html';
+    }, 1000);
+  });
+</script>
+</body>
+</html>

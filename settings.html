@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Settings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="ig-body">
+  <nav class="ig-sidebar d-none d-lg-flex flex-column">
+    <div class="ig-sidebar-inner">
+      <a href="index.html" class="ig-logo-wrap mb-2"><span class="fw-bold fs-4">Instagram</span></a>
+      <ul class="ig-nav list-unstyled mt-1">
+        <li><a href="index.html" class="ig-nav-link"><i class="bi bi-house"></i><span class="ig-nav-label">Home</span></a></li>
+        <li><a href="explore.html" class="ig-nav-link"><i class="bi bi-search"></i><span class="ig-nav-label">Explore</span></a></li>
+        <li><a href="messages.html" class="ig-nav-link"><i class="bi bi-chat-dots"></i><span class="ig-nav-label">Messages</span></a></li>
+        <li><a href="reels.html" class="ig-nav-link"><i class="bi bi-camera-reels"></i><span class="ig-nav-label">Reels</span></a></li>
+        <li><a href="notifications.html" class="ig-nav-link"><i class="bi bi-heart"></i><span class="ig-nav-label">Likes</span></a></li>
+        <li><a href="profile.html" class="ig-nav-link"><img src="profile-picture.jpeg" class="ig-nav-avatar" alt="" /><span class="ig-nav-label">Profile</span></a></li>
+      </ul>
+      <div class="ig-sidebar-bottom">
+        <a href="settings.html" class="ig-nav-link active"><i class="bi bi-gear-fill"></i><span class="ig-nav-label">Settings</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="ig-main">
+    <div class="ig-settings-layout">
+      <aside class="ig-settings-leftnav">
+        <h4 class="ig-settings-title px-4 py-4 mb-0">Settings</h4>
+        <div class="ig-settings-nav-group">
+          <a href="#" class="ig-settings-nav-item settings-link active" data-target="editPanel"><i class="bi bi-person-circle"></i> Edit profile</a>
+          <a href="#" class="ig-settings-nav-item settings-link" data-target="passwordPanel"><i class="bi bi-shield-lock"></i> Password</a>
+          <a href="#" class="ig-settings-nav-item settings-link" data-target="appearancePanel"><i class="bi bi-moon-stars"></i> Appearance</a>
+          <a href="login.html" class="ig-settings-nav-item ig-settings-logout"><i class="bi bi-box-arrow-right"></i> Log out</a>
+        </div>
+      </aside>
+
+      <section class="ig-settings-content">
+        <div class="ig-settings-section settings-panel" id="editPanel">
+          <h5 class="fw-bold mb-4">Edit profile</h5>
+          <div class="ig-settings-profile-pic-row">
+            <img src="profile-picture.jpeg" class="rounded-circle" id="settingsAvatar" style="width:56px;height:56px;object-fit:cover;" alt="" />
+            <div>
+              <div class="fw-semibold">aniket</div>
+              <label class="ig-blue-text fw-semibold" style="cursor:pointer;font-size:.88rem;">Change photo<input type="file" accept="image/*" style="display:none;" onchange="previewAvatar(this)" /></label>
+            </div>
+          </div>
+
+          <form id="settingsProfileForm">
+            <div class="ig-settings-field">
+              <label class="ig-settings-label">Name</label>
+              <input type="text" class="ig-settings-input form-control" value="Aniket" />
+            </div>
+            <div class="ig-settings-field">
+              <label class="ig-settings-label">Username</label>
+              <input type="text" class="ig-settings-input form-control" value="aniket" />
+            </div>
+            <div class="ig-settings-field">
+              <label class="ig-settings-label">Bio</label>
+              <textarea class="ig-settings-input form-control" id="bioArea" rows="3" maxlength="150">Photography lover and computer science student.</textarea>
+              <div class="text-muted small text-end mt-1"><span id="bioCount">0</span>/150</div>
+            </div>
+            <button type="submit" class="btn ig-btn-primary">Save</button>
+          </form>
+        </div>
+
+        <div class="ig-settings-section settings-panel" id="passwordPanel" style="display:none;">
+          <h5 class="fw-bold mb-4">Change password</h5>
+          <form id="settingsPasswordForm">
+            <div class="ig-settings-field">
+              <label class="ig-settings-label">New password</label>
+              <input type="password" class="ig-settings-input form-control" id="newPass" placeholder="New password" />
+            </div>
+            <div class="ig-settings-field">
+              <label class="ig-settings-label">Confirm password</label>
+              <input type="password" class="ig-settings-input form-control" id="confirmPass" placeholder="Confirm password" />
+            </div>
+            <button type="submit" class="btn ig-btn-primary">Change password</button>
+          </form>
+        </div>
+
+        <div class="ig-settings-section settings-panel" id="appearancePanel" style="display:none;">
+          <h5 class="fw-bold mb-4">Appearance</h5>
+          <div class="ig-settings-toggle-row">
+            <div>
+              <div class="fw-semibold small">Dark mode</div>
+              <div class="text-muted" style="font-size:.78rem;">Switch the page color theme.</div>
+            </div>
+            <div class="form-check form-switch"><input class="form-check-input ig-toggle" type="checkbox" onchange="toggleDarkMode()" /></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="ig-mobile-nav d-flex d-lg-none">
+    <a href="index.html" class="ig-mob-link"><i class="bi bi-house-fill"></i></a>
+    <a href="explore.html" class="ig-mob-link"><i class="bi bi-search"></i></a>
+    <a href="messages.html" class="ig-mob-link"><i class="bi bi-chat-dots"></i></a>
+    <a href="reels.html" class="ig-mob-link"><i class="bi bi-camera-reels"></i></a>
+    <a href="profile.html" class="ig-mob-link"><img src="C:\Users\anike\OneDrive\Pictures\Camera Roll\WhatsApp Image 2026-06-14 at 4.27.42 PM.jpeg" class="ig-mob-avatar" alt="" /></a>
+  </nav>
+
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:9999;">
+    <div id="igToast" class="ig-toast" style="display:none;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

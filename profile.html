@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram - Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="ig-body">
+  <nav class="ig-sidebar d-none d-lg-flex flex-column">
+    <div class="ig-sidebar-inner">
+      <a href="index.html" class="ig-logo-wrap mb-2"><span class="fw-bold fs-4">Instagram</span></a>
+      <ul class="ig-nav list-unstyled mt-1">
+        <li><a href="index.html" class="ig-nav-link"><i class="bi bi-house"></i><span class="ig-nav-label">Home</span></a></li>
+        <li><a href="explore.html" class="ig-nav-link"><i class="bi bi-search"></i><span class="ig-nav-label">Explore</span></a></li>
+        <li><a href="messages.html" class="ig-nav-link"><i class="bi bi-chat-dots"></i><span class="ig-nav-label">Messages</span></a></li>
+        <li><a href="reels.html" class="ig-nav-link"><i class="bi bi-camera-reels"></i><span class="ig-nav-label">Reels</span></a></li>
+        <li><a href="notifications.html" class="ig-nav-link"><i class="bi bi-heart"></i><span class="ig-nav-label">Likes</span></a></li>
+        <li><a href="profile.html" class="ig-nav-link active"><img src="profile-picture.jpeg" class="ig-nav-avatar" alt="" /><span class="ig-nav-label">Profile</span></a></li>
+      </ul>
+      <div class="ig-sidebar-bottom">
+        <a href="settings.html" class="ig-nav-link"><i class="bi bi-gear"></i><span class="ig-nav-label">Settings</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="ig-main ig-profile-main">
+    <div class="ig-profile-wrap">
+      <header class="ig-profile-header">
+        <div class="ig-profile-pic-col">
+          <div class="ig-profile-pic-ring">
+            <img src="profile-picture.jpeg" class="ig-profile-pic" alt="Profile" />
+          </div>
+        </div>
+
+        <div class="ig-profile-info-col">
+          <div class="ig-profile-username-row">
+            <h2 class="ig-profile-username">aniket</h2>
+            <a href="settings.html" class="btn ig-btn-edit-profile">Edit profile</a>
+          </div>
+          <div class="ig-profile-stats-row">
+            <span><strong>6</strong> posts</span>
+            <span><strong>245</strong> followers</span>
+            <span><strong>180</strong> following</span>
+          </div>
+          <div class="ig-profile-bio">
+            <div class="fw-semibold">Aniket</div>
+            <div>Photography lover and computer science student.</div>
+            <a href="index.html" class="ig-profile-link">View my feed</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="ig-profile-tabs-wrap">
+        <div class="ig-profile-tabs">
+          <button class="ig-profile-tab active" data-target="postsPanel"><i class="bi bi-grid-3x3"></i> <span>Posts</span></button>
+          <button class="ig-profile-tab" data-target="savedPanel"><i class="bi bi-bookmark"></i> <span>Saved</span></button>
+          <button class="ig-profile-tab" data-target="aboutPanel"><i class="bi bi-person"></i> <span>About</span></button>
+        </div>
+      </div>
+
+      <div id="postsPanel" class="ig-grid profile-panel">
+        <div class="ig-grid-item"><img src="sunset.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 120</div></div>
+        <div class="ig-grid-item"><img src="stone.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 86</div></div>
+        <div class="ig-grid-item"><img src="water-side.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 150</div></div>
+        <div class="ig-grid-item"><img src="beach.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 96</div></div>
+        <div class="ig-grid-item"><img src="sun.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 72</div></div>
+        <div class="ig-grid-item"><img src="tree.jpeg" alt="" /><div class="ig-grid-overlay"><i class="bi bi-heart-fill"></i> 134</div></div>
+      </div>
+
+      <div id="savedPanel" class="profile-panel text-center py-5 text-muted" style="display:none;">
+        <i class="bi bi-bookmark" style="font-size:3rem;"></i>
+        <h5 class="mt-3 fw-bold">Saved posts</h5>
+        <p class="small">Saved posts will appear here in a real app.</p>
+      </div>
+
+      <div id="aboutPanel" class="profile-panel py-5" style="display:none;">
+        <h5 class="fw-bold">About this profile</h5>
+        <p class="text-muted">This profile belongs to Aniket.</p>
+      </div>
+    </div>
+  </main>
+
+  <nav class="ig-mobile-nav d-flex d-lg-none">
+    <a href="index.html" class="ig-mob-link"><i class="bi bi-house-fill"></i></a>
+    <a href="explore.html" class="ig-mob-link"><i class="bi bi-search"></i></a>
+    <a href="messages.html" class="ig-mob-link"><i class="bi bi-chat-dots"></i></a>
+    <a href="reels.html" class="ig-mob-link"><i class="bi bi-camera-reels"></i></a>
+    <a href="profile.html" class="ig-mob-link active"><img src="profile-picture.jpeg" class="ig-mob-avatar" alt="" /></a>
+  </nav>
+
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index:9999;">
+    <div id="igToast" class="ig-toast" style="display:none;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
